@@ -1,0 +1,54 @@
+.content {
+	padding-top: 2vh;
+	height: 76vh;
+    width: 50vh;
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+	display: flex;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cell {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 6px;
+    width: 21vh;
+    height: 17vh;
+}
+
+.cell .btn {
+	border-radius: 10vh;
+    width: 100%;
+    height: 100%;	
+}
+
+.btn-default {
+	font-size: 8vh;
+}
+
+#bClear, #bEnter, #bUp, #bStop, #bDown {
+	font-size: 4vh;
+}
+
+#bStop {
+	color: red;
+}
+#bUp {
+	border: 0px;
+	background-image: url(/images/arrow-light-round-up-circle.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#bDown {
+	border: 0px;
+	background-image: url(/images/arrow-light-round-down-circle.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}

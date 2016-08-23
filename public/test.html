@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Door Controller</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div class="page">
+			<div class="text-center">
+				<h4>Welcome To Olivia Residency</h4>
+				<label id="status">Please Enter Your Passcode</label>
+			</div>
+			<div id="keypad" class="content">
+				<div class="row">
+					<div class="cell"><button type="button" class="btn btn-default" id="b7">7</button></div>
+					<div class="cell">
+						<button type="button" class="btn btn-default" id="bUp" aria-label="Up">
+						</button>
+					</div>
+					<div class="cell"><button type="button" class="btn btn-default" id="b9">9</button></div>
+				</div>
+				<div class="row">
+					<div class="cell"><button type="button" class="btn btn-default" id="b4">4</button></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="bStop">STOP</button></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="b6">6</button></div>
+				</div>
+				<div class="row">
+					<div class="cell"><button type="button" class="btn btn-default" id="b1">1</button></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="bDown"></button></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="b3">3</button></div>
+				</div>
+				<div class="row">
+					<div class="cell"><button type="button" class="btn btn-warning" style="display:none" id="bClear">Clear</button></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="b0">0</button></div>
+					<div class="cell"><button type="button" class="btn btn-success" style="display:none" id="bEnter">Enter</button></div>
+				</div>
+			</div>
+			<div id="controller" class="content" style="display:none;">
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="bUp">Up</button></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="bStop">Stop</button></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"><button type="button" class="btn btn-default" id="bDown">Down</button></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+				</div>
+				<div class="text-center">
+					<label id="timer"></label>
+				</div>
+			</div>
+		</div>
+		<script src="javascripts/jquery-3.1.0.min.js"></script>
+		<script src="javascripts/sha256.js"></script>
+		<script src="javascripts/main.js"></script>
+	</body>
+</html>
