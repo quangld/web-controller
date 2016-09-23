@@ -7,6 +7,8 @@ test
 *.env
 *.dev
 .DS_Store
+enviroment.json
+HPDV6.settings.json
 
 # Docker
 Dockerfile

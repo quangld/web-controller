@@ -1,0 +1,23 @@
+
+{
+    "fbAppToken": "",
+    "fbManagerID": "",
+    "controller": {
+        "GPIOMap": {
+            "Up": 11,
+            "Down": 13,
+            "Lock": 15,
+            "Unlock": 16
+        },
+        "OFFState": 1,
+        "pushedTime": 300,
+        "upTimeout": 30000
+    },
+    "timeout": 60,
+    "rooms": [{
+        "id": 999, 
+        "pass": "1234",
+        "name": "",
+        "admin": true
+    }]
+}
