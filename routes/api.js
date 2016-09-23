@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var config, controller, fbNotifier, manager;
+var env = (require('json-persistent-object'))('./config/enviroment.json');
+
 if (!env.settings) env.settings = 'env.json';
+
 config = new (require('json-persistent-object'))('./config/' + env.settings);
 if (!env.controller) env.controller = 'blank.controller.js';
 controller = new (require('../modules/' + env.controller))(config.controller);

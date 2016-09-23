@@ -10,7 +10,6 @@ var FBNotifer = function(fbAppToken, fbManagerID) {
 }
 
 FBNotifer.prototype.send = function(text) {
-        console.log(this);
     if (!text || !this.fbManagerID || !this.fbAppToken) return;
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',

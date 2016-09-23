@@ -3,6 +3,10 @@ https://www.raspberrypi.org/documentation/configuration/pin-configuration.md
 Download Latest dt-blob.dts
 https://raw.githubusercontent.com/raspberrypi/firmware/master/extra/dt-blob.dts
 
+Search for your board section and modify accordingly.
+
+My board is Raspberry Pi 3 Model B rev 1.2
+
 Since the relay switch default is OFF when PIN is active_high
 Insert these 3 lines in section
       pins_3b2 { // Pi 3 Model B rev 1.2

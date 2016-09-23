@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name"        : "SmartHome",
+    "name"        : "web-controller",
     "script"      : "./app.js",
     "watch"       : true,
     "env": {
