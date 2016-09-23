@@ -47,7 +47,7 @@ router.post('/', function(req, res, next) {
         case 'Lock':
         case 'Unlock':
             if (isDigikeyValid(req)) {
-                remote.click(req.body.type);
+                controller.click(req.body.type);
                 fbNotifier.send(getRequestIP(req) + ' pushed ' + req.body.room);
             } else {
                 //notify admin, invalid attempt
