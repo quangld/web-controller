@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-var config, fbNotifier, remote, manager;
-if (process.env.COMPUTERNAME == 'HPDV6') {
-    config = new(require('../modules/json-po.js'))('./config/'+process.env.COMPUTERNAME+'.settings.json');
-    remote = new(require('../modules/blank.controller.js'))(config.controller);
-} else {
-    config = new(require('../modules/json-po.js'))('./config/settings.json');
-    remote = new(require('../modules/controller.js'))(config.controller);
-}
-fbNotifier = new(require('../modules/fb.notifier.js'))(config.fbAppToken, config.fbManagerID);
+var config, controller, fbNotifier, manager;
+if (!env.settings) env.settings = 'env.json';
+config = new (require('json-persistent-object'))('./config/' + env.settings);
+if (!env.controller) env.controller = 'blank.controller.js';
+controller = new (require('../modules/' + env.controller))(config.controller);
+
+fbNotifier = new(require('../modules/facebook.notifier.js'))(config.fbAppToken, config.fbManagerID);
 manager = new(require('../modules/room-manager.js'))(config.rooms);
+
 
 console.dir(process.env.COMPUTERNAME);
 
