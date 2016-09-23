@@ -1,0 +1,18 @@
+https://www.raspberrypi.org/documentation/configuration/pin-configuration.md
+
+Download Latest dt-blob.dts
+https://raw.githubusercontent.com/raspberrypi/firmware/master/extra/dt-blob.dts
+
+Since the relay switch default is OFF when PIN is active_high
+Insert these 3 lines in section
+      pins_3b2 { // Pi 3 Model B rev 1.2
+         pin_config {
+---
+            pin@p17 { function = "output"; termination = "pull_up"; startup_state = "active"; polarity = "active_high"; };
+            pin@p27 { function = "output"; termination = "pull_up"; startup_state = "active"; polarity = "active_high"; };
+            pin@p22 { function = "output"; termination = "pull_up"; startup_state = "active"; polarity = "active_high"; };
+--
+Save the file dt-blob.dts
+then run this command to update the blob tree, then reboot
+
+sudo dtc -I dts -O dtb -o /boot/dt-blob.bin dt-blob.dts

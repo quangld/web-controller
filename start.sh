@@ -1,2 +1,4 @@
 #!/bin/bash
-pm2 start app.js --name SmartHome --watch ./
+pm2 restart app.js --name SmartHome --watch --ignore-watch ".git node_modules test public *.json"
+pm2 logs
+
