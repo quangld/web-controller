@@ -23,7 +23,7 @@ Controller.prototype.pageRefresh = function() {
 }
 
 Controller.prototype.getSalt = function(func) {
-    let _this = this;
+    var _this = this;
     //get salt for encrypting message
     this.send({
         type: 'salt'
