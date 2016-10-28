@@ -89,13 +89,6 @@ label#status {
 	background-size: contain;
 }
 
-#bDown {
-	border: 0px;
-	background-image: url(/images/arrow-light-round-down-circle.svg);
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
 #bLock {
 	border: 0px;
 	background-image: url(/images/lock.svg);
@@ -109,6 +102,13 @@ label#status {
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+
+#bStop {
+	color:darkred;
+	font-weight:bold;
+	font-size:1em;
+}
+
 
 #bSettings {
 	border: 0px;
@@ -139,4 +139,8 @@ span.input-group-addon-size {
 
 input.form-control {
 	font-weight:bold;
+}
+
+input#passcode {
+	color:#F0F0F0;
 }

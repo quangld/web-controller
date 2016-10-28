@@ -12,6 +12,7 @@
     "express": "~4.13.4",
     "express-session": "^1.14.0",
     "fb-messenger": "^1.1.0",
-    "node-json-db": "^0.7.3"
+    "node-json-db": "^0.7.3",
+    "useragent": "^2.1.9"
   }
 }
