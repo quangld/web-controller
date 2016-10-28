@@ -1,5 +1,4 @@
 var express = require('express')
-var path = require('path')
 var app = express()
 var api = require('./routes/api')
 var root = require('./routes/root')

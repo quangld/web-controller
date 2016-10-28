@@ -14,17 +14,18 @@ RoomManager.prototype.update = function (room) {
     // New Room when room.oldRoomId = 0 else updated
     // if id<0, delete room
   room.id = parseInt(room.id)
-  if (room.id == 0)
+  if (room.id === 0) {
     return ({
       err: true,
       message: 'Room Number can not be zero'
     })
-  if (!this.isRoomNumberValid(Math.abs(room.id)))
+  }
+  if (!this.isRoomNumberValid(Math.abs(room.id))) {
     return ({
       err: true,
       message: 'Room Number must be between 100..999'
     })
-
+  }
   if (room.id < 0) {
     if (Math.abs(room.id) == room.oldRoomId) {
       let i = this.rooms.findIndex(function (r) {
@@ -43,20 +44,21 @@ RoomManager.prototype.update = function (room) {
       message: 'Can NOT delete Room ' + room.id
     })
   } else {
-    if (room.oldRoomId == 0) {
-            // add new
-      if (!this.isRoomNumberValid(room.id))
+    if (room.oldRoomId === 0) { // add new
+      if (!this.isRoomNumberValid(room.id)) {
         return ({
           err: true,
           message: 'Room Number must be between 100..999'
         })
+      }
       let r = this.getRoomInfo(room.id)
       if (!r) {
-        if (!this.isPassValid(room.pass))
+        if (!this.isPassValid(room.pass)) {
           return ({
             err: true,
             message: 'Passcode provided for room ' + room.id + ' is invalid'
           })
+        }
         delete room.oldRoomId
         this.rooms.push(room)
         return ({
@@ -73,16 +75,14 @@ RoomManager.prototype.update = function (room) {
       let r = this.getRoomInfo(room.oldRoomId)
       if (r) {
         if (room.pass) {
-          if (this.isPassValid(room.pass))
+          if (this.isPassValid(room.pass)) {
             r.pass = room.pass
-          else
-                        return ({
-                          err: true,
-                          message: 'Passcode provided for room ' + room.id + ' is invalid'
-                        })
+          } else {
+            return ({ err: true, message: 'Passcode provided for room ' + room.id + ' is invalid' })
+          }
         }
-        if (r.id != room.id) r.id = room.id
-        if (room.name && (r.name != room.name)) r.name = room.name
+        if (r.id !== room.id) { r.id = room.id }
+        if (room.name && (r.name !== room.name)) { r.name = room.name }
         return ({
           err: false,
           message: 'Room ' + room.id + ': updated!'
@@ -117,7 +117,7 @@ RoomManager.prototype.sha256 = function (str) {
 
 RoomManager.prototype.getRoomInfo = function (id) {
   return this.rooms.find(function (e) {
-    return e.id == id
+    return e.id === id
   })
 }
 

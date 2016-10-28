@@ -9,7 +9,7 @@ var fs = require('fs')
 var JsonPO = function (source, value) {
   let data = {}
   let initializing = false
-  if (typeof source == 'string') {
+  if (typeof source === 'string') {
     try {
             // readFileSync is recommended, since we only need to read json file once
             // console.log(source);
@@ -19,15 +19,15 @@ var JsonPO = function (source, value) {
             // throw err;
       console.error(err)
     }
-  } else if (typeof value == 'object') {
+  } else if (typeof value === 'object') {
     data = value
   }
 
     // using proxy to watch for changes
   let proxy = new Proxy(data, {
     set: function (obj, prop, value, receiver) {
-      obj[prop] = (typeof value == 'object') ? new JsonPO(this, value) : value
-      if ((prop === 'length') && (typeof obj == 'object')) return true
+      obj[prop] = (typeof value === 'object') ? new JsonPO(this, value) : value
+      if ((prop === 'length') && (typeof obj === 'object')) return true
       this.__save()
       return true
     },
@@ -44,10 +44,10 @@ var JsonPO = function (source, value) {
     },
 
     __save: function () {
-      if (typeof source == 'object') {
+      if (typeof source === 'object') {
                 // console.log('changed in child');
         source.__save()
-      } else if ((typeof source == 'string') && (!initializing)) {
+      } else if ((typeof source === 'string') && (!initializing)) {
                 // saved to file
         console.log('File saved')
                 // can't use the async writeFile, because if object changed too fast, written fast got mess up.
@@ -58,10 +58,10 @@ var JsonPO = function (source, value) {
 
   })
 
-  if (data && (typeof data == 'object')) {
+  if (data && (typeof data === 'object')) {
     initializing = true // prevent writing to file while converting children objects
     for (let p in data) {
-      if (typeof data == 'object') {
+      if (typeof data === 'object') {
                 // turns children objects to obserable objects;
         proxy[p] = data[p]
       }

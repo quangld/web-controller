@@ -9,7 +9,7 @@ var Controller = function (config) {
 // click action: button is pushed (for a set time) and released
 Controller.prototype.click = function (button) {
   console.log(button, ' is clicked')
-  if ((button == 'Up') && this.config.autoStopDelay) {
+  if ((button === 'Up') && this.config.autoStopDelay) {
     this.autoStop()
   }
 }
